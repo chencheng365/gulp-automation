@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/libs/resetM.css" />
+  <link rel="stylesheet" type="text/css" href="css/libs/flex.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <script src="js/main.js"></script>   
+  <script src="js/libs/zepto.min1.js"></script>   
+  <title>flex-布局</title>
+</head>
+
+<style>
+  body {
+    padding: 50px 50px;
+  }
+
+  .ub li:nth-child(1) {
+    background: #666;
+  }
+
+  .ub li:nth-child(2) {
+    background: #999;
+  }
+
+  .ub li:nth-child(3) {
+    background: #ccc;
+  }
+
+
+  .box,
+  .box2 {
+    margin: 0;
+    padding: 10px;
+    background: #000;
+  }
+
+  .box {
+    width: 260px;
+    height: 100px;
+  }
+
+  .box2 {
+    width: 100px;
+    height: 260px;
+  }
+
+  .box li {
+    width: 50px;
+  }
+
+  .box2 li {
+    height: 50px;
+  }
+
+  .box li:nth-child(1),
+  .box2 li:nth-child(1) {
+    background: #666;
+  }
+
+  .box li:nth-child(2),
+  .box2 li:nth-child(2) {
+    background: #999;
+  }
+
+  .box li:nth-child(3),
+  .box2 li:nth-child(3) {
+    background: #ccc;
+  }
+
+  .box li,
+  .box2 li {
+    padding: 10px;
+  }
+
+  #box-wrap {
+    width: 200px;
+  }
+
+  #box-wrap li {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #aaa;
+    text-align: center;
+  }
+
+</style>
+
+<body>
+  <h1>子元素横向排列 box-orient:horizontal;</h1>
+  <ul class="ub ub-hor">
+    <li class="ub-f1">1</li>
+    <li class="ub-f2">2</li>
+    <li class="ub-f3">3</li>
+  </ul>
+  <br>
+  <h1>子元素纵向排列 box-orient:vertical;</h1>
+  <ul class="ub ub-ver">
+    <li class="ub-f1">1</li>
+    <li class="ub-f2">2</li>
+    <li class="ub-f3">3</li>
+  </ul>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h1>横向排列时子元素从起始位置对齐 box-pack:start;</h1>
+  <ul id="box" class="box ub ub-hor ub-ps">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>横向排列时子元素居中对齐 box-pack:center;</h1>
+  <ul id="box2" class="box ub ub-hor ub-pc">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>横向排列时子元素从结束位置对齐 box-pack:end;</h1>
+  <ul id="box3" class="box ub ub-hor ub-pe">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>横向排列时子元素两端对齐 box-pack:justify;</h1>
+  <ul id="box4" class="box ub ub-hor ub-pj">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>纵向排列时子元素从起始位置对齐 box-pack:start;</h1>
+  <ul id="box5" class="box2 ub ub-ver ub-ps">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>纵向排列时子元素居中对齐 box-pack:center;</h1>
+  <ul id="box6" class="box2 ub ub-ver ub-pc">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>纵向排列时子元素从结束位置对齐 box-pack:end;</h1>
+  <ul id="box7" class="box2 ub ub-ver ub-pe">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>纵向排列时子元素两端对齐 box-pack:justify;</h1>
+  <ul id="box8" class="box2 ub ub-ver ub-pj">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h1>横向排列时子元素从起始位置对齐 box-align:start;</h1>
+  <ul class="box ub ub-hor ub-as">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>横向排列时子元素居中对齐 box-align:center;</h1>
+  <ul class="box ub ub-hor ub-ac">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>横向排列时子元素从结束位置对齐 box-align:end;</h1>
+  <ul class="box ub ub-hor ub-ae ">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>横向排列时子元素基线对齐 box-align:baseline;</h1>
+  <ul class="box ub ub-hor ub-ab">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>横向排列时子元素自适应父元素 box-align:stretch;</h1>
+  <ul class="box ub ub-hor ub-ash">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>纵向排列时子元素从起始位置对齐 box-align:start;</h1>
+  <ul class="box2 ub ub-ver ub-as">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>纵向排列时子元素居中对齐 box-align:center;</h1>
+  <ul class="box2 ub ub-ver ub-ac">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>纵向排列时子元素从结束位置对齐 box-align:end;</h1>
+  <ul class="box2 ub ub-ver ub-ae">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>纵向排列时子元素基线对齐 box-align:baseline;</h1>
+  <ul class="box2 ub ub-ver ub-ab">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <h1>纵向排列时子元素自适应父元素 box-align:stretch;</h1>
+  <ul class="box2 ub ub-ver ub-ash">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h1>盒子内容垂直水平居中显示</h1>
+  <li class="ub ub-pac" style="width:50px;height:50px;background-color: blue;">中</li>
+
+  <h1>容器为多行。该情况下flex子项溢出的部分会被放置到新行，子项内部会发生断行</h1>
+  <ul class="ub-fw" id="box-wrap">
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+    <li>e</li>
+    <li>f</li>
+  </ul>
+
+</body>
+
+</html>

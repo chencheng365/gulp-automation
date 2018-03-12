@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  label i {
+    font-size: 12px;
+    font-style: normal;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    line-height: 12px;
+    color: #fff;
+    vertical-align: middle;
+    margin: -2px 2px 1px 0px;
+    border: #2489c5 1px solid;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]+i {
+    border-radius: 7px;
+  }
+
+  input[type="checkbox"]:checked+i,
+  input[type="radio"]:checked+i {
+    background: #2489c5;
+  }
+
+  input[type="checkbox"]:disabled+i,
+  input[type="radio"]:disabled+i {
+    border-color: #ccc;
+  }
+
+  input[type="checkbox"]:checked:disabled+i,
+  input[type="radio"]:checked:disabled+i {
+    background: #ccc;
+  }
+</style>
+
+<body>
+  <label><input type="checkbox"><i>&radic;</i>复选框</label><br>
+  <label><input type="checkbox" checked><i>&radic;</i>复选框</label><br>
+  <label><input type="checkbox" disabled><i>&radic;</i>复选框禁用</label><br>
+  <label><input type="checkbox" disabled checked><i>&radic;</i>复选框禁用已选</label><br>
+  <label><input type="radio" name="abc"><i>&radic;</i>单选框</label><br>
+  <label><input type="radio" name="abc" checked><i>&radic;</i>单选框</label><br>
+  <label><input type="radio" name="abc" disabled><i>&radic;</i>单选框禁用</label><br>
+  <label><input type="radio" name="def" disabled checked><i>&radic;</i>单选框禁用已选</label><br><br> <br>
+
+  <label><input type="radio" name="abc1"><i>&radic;</i>单选框</label>
+  <label><input type="radio" name="abc1" checked><i>&radic;</i>单选框</label>
+</body>
+<script>
+    //比较时间JS：
+    function diffDate(end) {
+      var evalue = document.getElementById(end).value;
+      var dB = new Date(evalue.replace(/-/g, "/"));
+      if (new Date() > Date.parse(dB)) {
+        return 1;
+      }
+      return 0;
+    }
+    //调用时间比较的JS：
+    var ret = diffDate("pauseDate");
+    if (ret == 1) {
+      alert("申请挂起结束时间必须在当前时间之后！");
+      document.getElementById("pauseDate").value = "";
+      document.getElementById('pauseDate').focus();
+      return;
+    }
+</script>
+</html>

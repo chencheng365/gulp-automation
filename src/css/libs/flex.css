@@ -1,0 +1,120 @@
+/**
+ * 开启弹性盒子   
+ */
+.ub{display:-moz-box;display:-webkit-box;display:-ms-box;display:box;}
+
+/**
+ * 定义子盒子显示方式 h水平, v垂直   
+ */
+.ub-hor{-webkit-box-orient: horizontal;-moz-box-orient: horizontal;-ms-box-orient: horizontal;box-orient: horizontal;}
+.ub-ver{-webkit-box-orient: vertical;-moz-box-orient: vertical;-ms-box-orient: vertical;box-orient: vertical;}
+
+/**
+ * 分配盒子空间
+ * 子盒子的大小=父盒子的大小*子盒子的box-flex/所有子盒子的box-flex值的和 
+ */
+.ub-f1{-webkit-box-flex:1;-moz-box-flex:1;-ms-box-flex:1;box-flex:1;}
+.ub-f2{-webkit-box-flex:2;-moz-box-flex:2;-ms-box-flex:2;box-flex:2;}
+.ub-f3{-webkit-box-flex:3;-moz-box-flex:3;-ms-box-flex:3;box-flex:3;}
+.ub-f4{-webkit-box-flex:4;-moz-box-flex:4;-ms-box-flex:4;box-flex:4;}
+.ub-f5{-webkit-box-flex:5;-moz-box-flex:5;-ms-box-flex:5;box-flex:5;}
+
+/**
+ * 管理水平方向上的空间分布 
+ */
+/* 可利用的空间在父盒子的两侧平均分配 */
+.ub-pc{-webkit-box-pack:center;-moz-box-pack:center;-ms-box-pack:center;box-pack:center;}
+/* 所有盒子在父盒子的左侧，余下的空间在右侧 */
+.ub-ps{-webkit-box-pack:start;-moz-box-pack:start;-ms-box-pack:start;box-pack:start;}
+/* 所有盒子在父盒子的右侧，余下的空间在左侧 */
+.ub-pe{-webkit-box-pack:end;-moz-box-pack:end;-ms-box-pack:end;box-pack:end;}
+/* 余下的空间在盒子间平均分配 */
+.ub-pj{-webkit-box-pack:justify;-moz-box-pack:justify;-ms-box-pack:justify;box-pack:justify;}
+
+/**
+ * 管理垂直方向上的空间分布
+ */
+/* 可用空间平均分配，上面一半，下面一半 */
+.ub-ac{-webkit-box-align:center;-moz-box-align:center;-ms-box-align:center;box-align:center;}
+/* 每个盒子沿父盒子的上边缘排列，余下的空间位于底部 */
+.ub-as{-webkit-box-align:start;-moz-box-align:start;-ms-box-align:start;box-align:start;}
+/* 每个盒子沿父盒子的下边缘排列，余下的空间位于顶部 */
+.ub-ae{-webkit-box-align:end;-moz-box-align:end;-ms-box-align:end;box-align:end;}
+/* 所有盒子沿着它们的基线排列，余下的空间可前可后； */
+.ub-ab{-webkit-box-align:baseline;-moz-box-align:baseline;-ms-box-align:baseline;box-align:baseline;}
+/* 每个盒子的高度调整到适合父盒子的高度 */
+.ub-ash{-webkit-box-align:stretch;-moz-box-align:stretch;-ms-box-align:stretch;box-align:stretch;}
+
+/**
+ * 盒子内容垂直水平居中显示
+ */
+.ub-pac{-webkit-box-pack:center;-moz-box-pack:center;-ms-box-pack:center;box-pack:center;-webkit-box-align:center;-moz-box-align:center;-ms-box-align:center;box-align:center;}
+
+/**
+ * 当子元素溢出父容器时自动换行
+ */
+.ub-fw {display: -webkit-flex;display: flex;-webkit-flex-wrap: wrap;flex-wrap: wrap;}
+
+/**
+ * 避免溢出,设置换行显示
+ */
+.ub-lines{-webkit-box-lines:multiple;-moz-box-lines:multiple;-ms-box-lines:multiple;box-lines:multiple;}
+
+
+/*将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。*/
+.ub-img
+{
+	-webkit-background-size:contain;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+/*将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器*/
+.ub-img1
+{	
+	-webkit-background-size:cover;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+/*背景图像在横向上平铺*/
+.ub-img2
+{
+	background-repeat:repeat-x;
+	background-size:auto 100%
+}
+/*背景图像在纵向上平铺*/
+.ub-img3
+{
+	background-repeat:repeat-y;
+	background-size:100% auto
+}
+/*定义背景图像横向100%，纵向自适应*/
+.ub-img4
+{
+	-webkit-background-size:100% auto;
+	background-size:100% auto;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+/*定义背景图像横向自适应，纵向为100%*/
+.ub-img5
+{
+	-webkit-background-size:auto 100%;
+	background-size:auto 100%;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+/*定义背景图像居中显示*/
+.ub-img6
+{
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.ub-img7
+{
+	-webkit-background-size:100% 100%;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	background-position:center;
+}

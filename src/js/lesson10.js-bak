@@ -1,0 +1,102 @@
+{
+  let list = new Set();
+  list.add(5);
+  list.add(7);
+
+  console.log(list,list.size);
+
+let set1  = new Set([1,2,3,4,5,6]);
+let set2  = new Set([4,5,6,7,8,9]);
+
+//并集
+let union = new Set([...set1,...set2]);
+//[1,2,3,4,5,6,7,8,9]
+
+//交集
+let intersect = new Set([...set1].filter(x => b.has(s)));
+//[4,5,6]
+
+//差集
+let intersect = new Set([...set1].filter(x => !b.has(s)));
+//[1,2,3,4]
+
+
+}
+
+{
+  let arr = [1,2,3,4,5];
+  let list = new Set(arr);
+
+  console.log('size-->',list.size)
+}
+
+{
+  //可以利用 Set() 去重
+  let list = new Set();
+  list.add(1);
+  list.add(2);
+  list.add(1);
+
+  console.log(list)
+
+  let arr = [1,2,3,4,2];
+  let arr2 = [1,2,3,4,'2'];
+  let list1 = new Set(arr);
+  let list2 = new Set(arr2);
+  console.log(list1,list2);
+}
+
+{
+  //Set() 的 四个方法
+  let arr = ['add','delete','clear','has'];
+  let list = new Set(arr);
+  console.log('has-->',list.has('add'));
+
+  console.log('delete-->',list.delete('add'), list);
+  console.log('clear-->',list.clear(), list);
+}
+
+{
+  let arr = ['add','delete','clear','has'];
+  let list = new Set(arr);
+
+  for (let key of list.keys()){
+    console.log('key-->',key);
+  }
+
+  for (let value of list.values()){
+    console.log('value-->',value);
+  }
+
+  for (let [key,value] of list.entries()){
+    console.log('entries-->',key,value);
+  }
+
+  list.forEach(function(item){
+    console.log(item);
+  })
+}
+
+{
+  let arg = {a:'a1',b:'b1'};
+  let arg2 = {c:'c1',f:'f1'};
+
+  let weakList = new WeakSet();
+  
+  weakList.add(arg);weakList.add(arg2);
+
+  console.log('weakList --> ',weakList);
+
+  console.log('has-->',weakList.has(arg));
+
+  console.log('delete-->',weakList.delete(arg), weakList);
+}
+
+{
+  let map = new Map();
+  let arr = ['123'];
+
+  map.set(arr,456);
+  //map.get() 得到键所对应的值
+  console.log('map', map, map.get(arr));
+}
